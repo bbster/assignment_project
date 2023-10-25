@@ -15,6 +15,7 @@ COPY pyproject.toml ${APP_HOME}/
 # app copy
 COPY assignment_project ${APP_HOME}/assignment_project
 COPY employment ${APP_HOME}/employment
+COPY todo_apps ${APP_HOME}/todo_apps
 COPY manage.py ${APP_HOME}/manage.py
 
 # runserver.sh 파일 복사
