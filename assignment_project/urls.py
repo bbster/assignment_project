@@ -12,15 +12,23 @@ from employment.views import (
     CompanyRetrieveDestroyView,
 
 )
+from todo.views import TodoRetrieveAPIView, TodoListCreateAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/job-description', JobDescriptionListCreateView.as_view()),
-    path('api/v1/job-description/<int:pk>', JobDescriptionRetrieveUpdateDestroyAPIView.as_view()),
-    path('api/v1/company', CompanyCreateView.as_view()),
-    path('api/v1/company/<int:pk>', CompanyRetrieveDestroyView.as_view()),
-    path('api/v1/user', UserCreateView.as_view()),
-    path('api/v1/user/<int:pk>', UserRetrieveUpdateDestroyView.as_view()),
-    path('api/v1/resume-history', ResumeHistoryListCreateView.as_view()),
-    path('api/v1/resume-history/<int:pk>', ResumeHistoryRetrieveDestroyView.as_view()),
+
+    # job description
+    path('api/v1/job-descriptions', JobDescriptionListCreateView.as_view()),
+    path('api/v1/job-descriptions/<int:pk>', JobDescriptionRetrieveUpdateDestroyAPIView.as_view()),
+    path('api/v1/companys', CompanyCreateView.as_view()),
+    path('api/v1/companys/<int:pk>', CompanyRetrieveDestroyView.as_view()),
+    path('api/v1/users', UserCreateView.as_view()),
+    path('api/v1/users/<int:pk>', UserRetrieveUpdateDestroyView.as_view()),
+    path('api/v1/resume-histories', ResumeHistoryListCreateView.as_view()),
+    path('api/v1/resume-histories/<int:pk>', ResumeHistoryRetrieveDestroyView.as_view()),
+
+    # todo
+    path('api/v1/todos', TodoListCreateAPIView.as_view()),
+    path('api/v1/todos/<int:pk>', TodoRetrieveAPIView.as_view()),
+
 ]
