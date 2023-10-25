@@ -9,7 +9,7 @@ class BaseModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-class TodoModel(models.Model):
+class TodoModel(BaseModel):
     title = models.CharField(max_length=100)
     content = models.TextField()
     due_date = models.DateTimeField()

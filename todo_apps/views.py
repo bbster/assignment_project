@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
-from todo.models import TodoModel
-from todo.serializers import TodoSerializer
+from todo_apps.models import TodoModel
+from todo_apps.serializers import TodoSerializer
 
 
 class TodoListCreateAPIView(ListCreateAPIView):
