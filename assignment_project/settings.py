@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'sideproject',
         'USER': 'admin',
         'PASSWORD': '1r2r3r4r',
-        'HOST': 'localhost',
+        'HOST': 'jc_postgres',
         'PORT': 5432,
     }
 }

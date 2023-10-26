@@ -8,7 +8,7 @@ WORKDIR ${APP_HOME}
 # System packages
 RUN apt-get update && apt-get install -y
 
-# 의존성 관리를 위한 pyproject.toml (Poetry의 의존성 파일)과 poetry.lock 파일 복사
+# 의존성 관리를 위한 pyproject.toml, poetry.lock 파일 복사
 COPY poetry.lock ${APP_HOME}/
 COPY pyproject.toml ${APP_HOME}/
 
