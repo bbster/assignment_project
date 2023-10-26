@@ -39,7 +39,7 @@ INSTALLED_APPS = [
 
     # my apps
     'employment.apps.EmploymentConfig',
-    'todo_apps.apps.TodoConfig',
+    'todo_app.apps.TodoConfig',
 ]
 
 MIDDLEWARE = [

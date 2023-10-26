@@ -12,7 +12,7 @@ from employment.views import (
     CompanyRetrieveDestroyView,
 
 )
-from todo_apps.views import TodoRetrieveAPIView, TodoListCreateAPIView
+from todo_app.views import TodoRetrieveAPIView, TodoListCreateAPIView
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -26,9 +26,8 @@ urlpatterns = [
     path('api/v1/resume-histories', ResumeHistoryListCreateView.as_view()),
     path('api/v1/resume-histories/<int:pk>', ResumeHistoryRetrieveDestroyView.as_view()),
 
-    # todo_apps
+    # todo_app
     path('api/v1/todos', TodoListCreateAPIView.as_view()),
     path('api/v1/todos/<int:pk>', TodoRetrieveAPIView.as_view()),
-
 ]
 

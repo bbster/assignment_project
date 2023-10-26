@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from todo_apps.models import TodoModel
+from todo_app.models import TodoModel
 
 
 class TodoSerializer(serializers.ModelSerializer):

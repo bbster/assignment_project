@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('todo_apps', '0002_todomodel_created_at_todomodel_updated_at'),
+        ('todo_app', '0002_todomodel_created_at_todomodel_updated_at'),
     ]
 
     operations = [

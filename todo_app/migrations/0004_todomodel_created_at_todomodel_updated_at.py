@@ -7,7 +7,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('todo_apps', '0003_remove_todomodel_created_at_and_more'),
+        ('todo_app', '0003_remove_todomodel_created_at_and_more'),
     ]
 
     operations = [
