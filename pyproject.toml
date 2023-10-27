@@ -12,6 +12,8 @@ djangorestframework = "^3.14.0"
 django-filter = "^23.3"
 pytest = "^7.4.3"
 psycopg2-binary = "^2.9.9"
+django-rest-swagger = "^2.2.0"
+drf-yasg = "^1.21.7"
 
 
 [tool.poetry.group.dev.dependencies]

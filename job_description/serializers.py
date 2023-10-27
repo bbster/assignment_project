@@ -1,12 +1,12 @@
 from rest_framework import serializers
 
-from employment.models import JobDescription, Company, User, ResumeHistory
+from job_description.models import JobDescription, Company, User, ResumeHistory
 
 
 class JobDescriptionListCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = JobDescription
-        fields = ['company', 'position', 'content', 'job_refund_pay', 'skils', 'start_date', 'end_date']
+        fields = ['company', 'position', 'content', 'reward', 'skill', 'start_date', 'end_date']
 
     def validate(self, data):
         if data['start_date'] > data['end_date']:
@@ -20,7 +20,7 @@ class JobDescriptionRetrieveUpdateDestroySerializer(serializers.ModelSerializer)
 
     class Meta:
         model = JobDescription
-        fields = ['company', 'position', 'content', 'job_refund_pay', 'skils', 'start_date', 'end_date']
+        fields = ['company', 'position', 'content', 'reward', 'skill', 'start_date', 'end_date']
 
     def to_representation(self, instance):
         data = super(JobDescriptionRetrieveUpdateDestroySerializer, self).to_representation(instance)
@@ -31,7 +31,7 @@ class JobDescriptionRetrieveUpdateDestroySerializer(serializers.ModelSerializer)
         return data
 
 
-class CompanyCreateSerializer(serializers.ModelSerializer):
+class CompanyListCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
         fields = ['company_name', 'country', 'city']

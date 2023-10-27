@@ -14,8 +14,9 @@ COPY pyproject.toml ${APP_HOME}/
 
 # app copy
 COPY assignment_project ${APP_HOME}/assignment_project
-COPY employment ${APP_HOME}/employment
-COPY todo_apps ${APP_HOME}/todo_apps
+COPY job_description ${APP_HOME}/job_description
+COPY todo_app ${APP_HOME}/todo_app
+COPY account ${APP_HOME}/account
 COPY manage.py ${APP_HOME}/manage.py
 
 # runserver.sh 파일 복사
@@ -31,4 +32,4 @@ RUN chmod 755 ${APP_HOME}/runserver.sh
 EXPOSE 8000
 
 # Django 애플리케이션 실행
-CMD ["nohup", "/bin/sh", "runserver.sh", "0.0.0.0:8000", "&"]
+CMD ["nohup", "/bin/sh", "runserver.sh", "192.168.0.2:8000", "&"]

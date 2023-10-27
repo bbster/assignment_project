@@ -8,21 +8,20 @@ from rest_framework.generics import (
     RetrieveDestroyAPIView
 )
 
-from employment.models import (
+from job_description.models import (
     JobDescription,
     Company,
     User,
     ResumeHistory
 )
-from employment.serializers import (
+from job_description.serializers import (
     JobDescriptionRetrieveUpdateDestroySerializer,
     JobDescriptionListCreateSerializer,
-    CompanyCreateSerializer,
     CompanyRetrieveUpdateDestroySerializer,
     UserCreateSerializer,
     UserRetrieveUpdateDestroySerializer,
     ResumeHistoryListCreateSerializer,
-    ResumeHistoryRetrieveDestroySerializer,
+    ResumeHistoryRetrieveDestroySerializer, CompanyListCreateSerializer,
 )
 
 
@@ -38,9 +37,9 @@ class JobDescriptionRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = JobDescriptionRetrieveUpdateDestroySerializer
 
 
-class CompanyCreateView(CreateAPIView):
+class CompanyListCreateView(ListCreateAPIView):
     queryset = Company.objects.all()
-    serializer_class = CompanyCreateSerializer
+    serializer_class = CompanyListCreateSerializer
 
 
 class CompanyRetrieveDestroyView(RetrieveDestroyAPIView):

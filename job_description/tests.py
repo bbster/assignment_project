@@ -1,6 +1,6 @@
 from rest_framework.test import APITestCase
 
-from employment.models import Company, JobDescription, User, ResumeHistory
+from job_description.models import Company, JobDescription, User, ResumeHistory
 
 
 class TestViews(APITestCase):
