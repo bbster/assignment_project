@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3cc477d9-09be-4fde-8b4d-d680b30740c9" name="Changes" comment="conflicts">
+      <change afterPath="$PROJECT_DIR$/server/account/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/account/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/account/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/account/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/account/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/account/utils.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2XD8pDNytdHQ5znJuReYl0RbAVm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/bcd/Desktop/과외/assignment/templates&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3cc477d9-09be-4fde-8b4d-d680b30740c9" name="Changes" comment="" />
+      <created>1698152471279</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698152471279</updated>
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1698173567556</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698173567556</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <option name="closed" value="true" />
+      <created>1698176366847</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698176366847</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: .gitignore 수정">
+      <option name="closed" value="true" />
+      <created>1698177505933</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698177505933</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: 마이그레이션 파일 생성">
+      <option name="closed" value="true" />
+      <created>1698177540489</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698177540489</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: 초기 생성 파일 추가">
+      <option name="closed" value="true" />
+      <created>1698177570970</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698177570970</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: 모델 생성">
+      <option name="closed" value="true" />
+      <created>1698177578907</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698177578907</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: 시리얼 라이저 생성">
+      <option name="closed" value="true" />
+      <created>1698177587691</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698177587691</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: view 생성">
+      <option name="closed" value="true" />
+      <created>1698177598769</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698177598769</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: URLS View 매핑">
+      <option name="closed" value="true" />
+      <created>1698177608139</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698177608139</updated>
+    </task>
+    <task id="LOCAL-00010" summary="test: unittest 일부 추가&#10;&#10;job_description 생성, 조회, 상세조회 테스트 케이스 추가">
+      <option name="closed" value="true" />
+      <created>1698179508079</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1698179508079</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add: 마이그래이션 파일 추가">
+      <option name="closed" value="true" />
+      <created>1698250074467</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698250074467</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add: docker 파일 추가">
+      <option name="closed" value="true" />
+      <created>1698250113848</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698250113848</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: todo 앱 추가">
+      <option name="closed" value="true" />
+      <created>1698251114152</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1698251114152</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ruff 추가">
+      <option name="closed" value="true" />
+      <created>1698251135469</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1698251135469</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add: 마이그레이션 파일 추가">
+      <option name="closed" value="true" />
+      <created>1698255766109</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1698255766109</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix: 앱 네이밍 변경">
+      <option name="closed" value="true" />
+      <created>1698256037787</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1698256037787</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fix: 앱 네이밍 변경">
+      <option name="closed" value="true" />
+      <created>1698256046291</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1698256046291</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix: docker 컨테이너의 DB 사용을 하기 위해서는 HOST를 컨테이너 이름으로 지정 해줘야 한다.">
+      <option name="closed" value="true" />
+      <created>1698318786722</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1698318786722</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix: todo_apps -&gt; todo_app 변경">
+      <option name="closed" value="true" />
+      <created>1698319199561</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1698319199561</updated>
+    </task>
+    <task id="LOCAL-00020" summary="전반적으로 다시 세팅">
+      <option name="closed" value="true" />
+      <created>1698434804675</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1698434804675</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1751cb2d-f757-4f69-8597-506f011e07c1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1751cb2d-f757-4f69-8597-506f011e07c1">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/bcd/Desktop/과외/assignment/server/account" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="fix: .gitignore 수정" />
+    <MESSAGE value="feat: 마이그레이션 파일 생성" />
+    <MESSAGE value="feat: 초기 생성 파일 추가" />
+    <MESSAGE value="feat: 모델 생성" />
+    <MESSAGE value="feat: 시리얼 라이저 생성" />
+    <MESSAGE value="feat: view 생성" />
+    <MESSAGE value="feat: URLS View 매핑" />
+    <MESSAGE value="test: unittest 일부 추가&#10;&#10;job_description 생성, 조회, 상세조회 테스트 케이스 추가" />
+    <MESSAGE value="add: 마이그래이션 파일 추가" />
+    <MESSAGE value="add: docker 파일 추가" />
+    <MESSAGE value="feat: todo 앱 추가" />
+    <MESSAGE value="ruff 추가" />
+    <MESSAGE value="add: 마이그레이션 파일 추가" />
+    <MESSAGE value="fix: 앱 네이밍 변경" />
+    <MESSAGE value="fix: docker 컨테이너의 DB 사용을 하기 위해서는 HOST를 컨테이너 이름으로 지정 해줘야 한다." />
+    <MESSAGE value="fix: todo_apps -&gt; todo_app 변경" />
+    <MESSAGE value="전반적으로 다시 세팅" />
+    <MESSAGE value="conflict" />
+    <MESSAGE value="conflicts" />
+    <option name="LAST_COMMIT_MESSAGE" value="conflicts" />
+  </component>
+</project>
