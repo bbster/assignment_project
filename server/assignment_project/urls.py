@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path
 
-from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
@@ -14,7 +13,6 @@ from job_description.views import (
     ResumeHistoryListCreateView,
     ResumeHistoryRetrieveDestroyView,
     CompanyRetrieveDestroyView, CompanyListCreateView,
-
 )
 from todo_app.views import TodoRetrieveAPIView, TodoListCreateAPIView
 
