@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-nzomu0f4*!@tddfu_r_8b)^#ip-rmwzl&l5nl^42@ifpjxxgpr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['49.1.213.232', "192.168.0.2", '127.0.0.1', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['49.1.213.232', '192.168.64.1', "192.168.0.2", '127.0.0.1', 'localhost', '0.0.0.0']
 
 # Application definition
 INSTALLED_APPS = [
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'drf_yasg',
+    'corsheaders',
 
     # my apps
     'job_description.apps.EmploymentConfig',
@@ -46,6 +47,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # CORS 추가
+    'django.middleware.common.CommonMiddleware',  # CORS 추가
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,7 +84,7 @@ REST_FRAMEWORK = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': os.path.join(BASE_DIR, 'templates'),
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,7 +105,7 @@ DATABASES = {
         'NAME': 'sideproject',
         'USER': 'admin',
         'PASSWORD': '1r2r3r4r',
-        'HOST': '192.168.0.2',
+        'HOST': '192.168.64.1',
         'PORT': 5432,
     }
 }
@@ -141,9 +144,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# Static 파일 설정
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # 실제로 정적 파일이 모이는 곳
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'client' / 'build' / 'static',  # 정적 파일이 위치한 디렉토리
+]
+
+
+# Media 파일 설정
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# CORS 추가
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:8000', 'http://localhost:3000', 'http://192.169.0.2:8000', 'http://192.168.64.1:8000')
+CORS_ALLOW_CREDENTIALS = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
