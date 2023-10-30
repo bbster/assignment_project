@@ -1,4 +1,5 @@
 from django.db import IntegrityError
+from django.shortcuts import render
 
 from rest_framework import serializers, filters
 from rest_framework.generics import (
@@ -71,3 +72,7 @@ class ResumeHistoryListCreateView(ListCreateAPIView):
 class ResumeHistoryRetrieveDestroyView(RetrieveDestroyAPIView):
     queryset = ResumeHistory.objects.all()
     serializer_class = ResumeHistoryRetrieveDestroySerializer
+
+
+def index(request):
+    return render(request, 'job_description/index.html')

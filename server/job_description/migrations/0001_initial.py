@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
                 ('skill', models.CharField(help_text='여러 기술', max_length=200)),
                 ('start_date', models.DateField(help_text='채용시작일')),
                 ('end_date', models.DateField(help_text='채용마감일')),
-                ('company', models.ForeignKey(db_comment='해당 채용공고를 등록한 회사입니다.', on_delete=django.db.models.deletion.CASCADE, related_name='job_descriptions', to='job_description.company')),
+                ('company', models.ForeignKey(db_comment='해당 채용공고를 등록한 회사입니다.', on_delete=django.db.models.deletion.CASCADE, related_name='job_description', to='job_description.company')),
             ],
             options={
                 'abstract': False,
@@ -61,7 +61,7 @@ class Migration(migrations.Migration):
                 ('updated_at', models.DateTimeField(auto_now=True, help_text='수정일')),
                 ('name', models.CharField(help_text='이름', max_length=50)),
                 ('age', models.PositiveIntegerField(help_text='나이')),
-                ('job_descriptions', models.ManyToManyField(related_name='users', through='job_description.ResumeHistory', to='job_description.jobdescription')),
+                ('job_description', models.ManyToManyField(related_name='users', through='job_description.ResumeHistory', to='job_description.jobdescription')),
             ],
             options={
                 'abstract': False,

@@ -12,7 +12,7 @@ from job_description.views import (
     UserRetrieveUpdateDestroyView,
     ResumeHistoryListCreateView,
     ResumeHistoryRetrieveDestroyView,
-    CompanyRetrieveDestroyView, CompanyListCreateView,
+    CompanyRetrieveDestroyView, CompanyListCreateView, index,
 )
 from todo_app.views import TodoRetrieveAPIView, TodoListCreateAPIView
 
@@ -28,6 +28,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name='index'),
+
     # swagger
     path('api/doc/swagger', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('api/doc/redoc', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

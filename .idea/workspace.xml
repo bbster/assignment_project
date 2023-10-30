@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cc477d9-09be-4fde-8b4d-d680b30740c9" name="Changes" comment="account app 복구">
-      <change afterPath="$PROJECT_DIR$/client/build/static/static_test.html" afterDir="false" />
+    <list default="true" id="3cc477d9-09be-4fde-8b4d-d680b30740c9" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/server/assets/do_hee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/templates/job_description/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/assignment_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/assignment_project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/assignment_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/assignment_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/docker_connect_server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/server/docker_connect.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/templates/drf-yasg/redoc-old.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/templates/drf-yasg/redoc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/templates/drf-yasg/swagger-ui.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +46,14 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/bcd/Desktop/side_project/assignment",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/bcd/Desktop/side_project/assignment/server/templates/job_descriptions",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/templates/job_descriptions" />
       <recent name="$PROJECT_DIR$/server/staticfiles" />
       <recent name="$PROJECT_DIR$/server/templates/v2" />
       <recent name="$PROJECT_DIR$/server/templates/static" />
@@ -239,7 +240,39 @@
       <option name="project" value="LOCAL" />
       <updated>1698436671236</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix: 도커 파일 내용 수정">
+      <option name="closed" value="true" />
+      <created>1698581433673</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1698581433673</updated>
+    </task>
+    <task id="LOCAL-00023" summary="add: cors-header 패키지 추가">
+      <option name="closed" value="true" />
+      <created>1698581450371</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1698581450371</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix: urls 불필요 코드 삭제">
+      <option name="closed" value="true" />
+      <created>1698581485880</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1698581485880</updated>
+    </task>
+    <task id="LOCAL-00025" summary=".">
+      <option name="closed" value="true" />
+      <created>1698581532048</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1698581532048</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -305,6 +338,10 @@
     <MESSAGE value="conflict" />
     <MESSAGE value="conflicts" />
     <MESSAGE value="account app 복구" />
-    <option name="LAST_COMMIT_MESSAGE" value="account app 복구" />
+    <MESSAGE value="fix: 도커 파일 내용 수정" />
+    <MESSAGE value="add: cors-header 패키지 추가" />
+    <MESSAGE value="fix: urls 불필요 코드 삭제" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>

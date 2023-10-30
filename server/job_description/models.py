@@ -17,7 +17,7 @@ class Company(BaseModel):
 class JobDescription(BaseModel):
     company = models.ForeignKey(to="job_description.Company",
                                 on_delete=models.CASCADE,
-                                related_name="job_descriptions",
+                                related_name="job_description",
                                 db_comment="해당 채용공고를 등록한 회사입니다.")
     position = models.CharField(max_length=50, help_text='직무')
     content = models.TextField(help_text='채용내용')

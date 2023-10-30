@@ -65,4 +65,4 @@ class TestViews(APITestCase):
                                             'skils': 'test_skils',
                                             'start_date': '2021-01-01',
                                             'end_date': '2021-01-02',
-                                            'job_descriptions': [1]})
+                                            'job_description': [1]})

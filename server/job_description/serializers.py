@@ -26,7 +26,7 @@ class JobDescriptionRetrieveUpdateDestroySerializer(serializers.ModelSerializer)
         data = super(JobDescriptionRetrieveUpdateDestroySerializer, self).to_representation(instance)
 
         filtered_job_descriptions = JobDescription.objects.filter(company=data["company"])
-        data["job_descriptions"] = [job_description.id for job_description in filtered_job_descriptions]
+        data["job_description"] = [job_description.id for job_description in filtered_job_descriptions]
 
         return data
 

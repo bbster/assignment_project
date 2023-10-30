@@ -23,7 +23,11 @@ COPY job_description ${APP_HOME}/job_description
 COPY todo_app ${APP_HOME}/todo_app
 COPY account ${APP_HOME}/account
 COPY manage.py ${APP_HOME}/manage.py
+
+# client
 COPY staticfiles ${APP_HOME}/staticfiles
+COPY assets ${APP_HOME}/assets
+COPY templates ${APP_HOME}/templates
 
 # runserver.sh 파일 복사
 COPY runserver.sh ${APP_HOME}/runserver.sh
