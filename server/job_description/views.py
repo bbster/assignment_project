@@ -75,4 +75,4 @@ class ResumeHistoryRetrieveDestroyView(RetrieveDestroyAPIView):
 
 
 def index(request):
-    return render(request, 'job_description/index.html')
+    return render(request, "assignment_templates/index.html")
