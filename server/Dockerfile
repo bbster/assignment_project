@@ -28,7 +28,6 @@ COPY manage.py ${APP_HOME}/manage.py
 COPY staticfiles ${APP_HOME}/staticfiles
 COPY templates ${APP_HOME}/templates
 
-
 # runserver.sh 파일 복사
 COPY runserver.sh ${APP_HOME}/runserver.sh
 RUN chmod 755 ${APP_HOME}/runserver.sh  # 실행 권한 및 RUN

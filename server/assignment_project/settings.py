@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR.parent, 'client', 'dist'),
+            os.path.join(BASE_DIR, 'templates', 'assignment_templates'),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -118,7 +118,7 @@ USE_TZ = True
 STATIC_URL = '/assets/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR.parent, 'client', 'dist', 'assets'),
+    os.path.join(BASE_DIR, 'templates', 'assignment_templates', 'assets'),
 ]
 
 # Media 파일 설정

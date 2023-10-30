@@ -78,5 +78,5 @@ class ResumeHistoryRetrieveDestroyView(RetrieveDestroyAPIView):
 
 
 def index(request):
-    template_path = os.path.join(settings.BASE_DIR.parent, 'client', 'dist', 'index.html')
+    template_path = os.path.join(settings.BASE_DIR, 'templates', 'assignment_templates', 'index.html')
     return render(request, template_path)
