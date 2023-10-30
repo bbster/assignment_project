@@ -1,3 +1,6 @@
+import os
+
+from django.conf import settings
 from django.db import IntegrityError
 from django.shortcuts import render
 
@@ -75,4 +78,5 @@ class ResumeHistoryRetrieveDestroyView(RetrieveDestroyAPIView):
 
 
 def index(request):
-    return render(request, "assignment_templates/index.html")
+    template_path = os.path.join(settings.BASE_DIR.parent, 'client', 'dist', 'index.html')
+    return render(request, template_path)
