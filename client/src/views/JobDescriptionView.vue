@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <article>대에충 회사 내용</article>
+  <main>
+    <JobDescriptionCard></JobDescriptionCard>
+  </main>
 </template>
 
 <style></style>

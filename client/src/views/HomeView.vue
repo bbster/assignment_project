@@ -5,3 +5,5 @@
     <CompanyCard></CompanyCard>
   </main>
 </template>
+
+<style></style>

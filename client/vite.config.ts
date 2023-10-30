@@ -7,6 +7,25 @@ import AutoImport from 'unplugin-auto-import/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        dir: '../server/templates/job_description',
+        assetFileNames: (assetInfo) => {
+          let extType = assetInfo?.name?.split('.').at(-1)
+          if (!extType) return `assets/[name]-[hash][extname]`
+
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            extType = 'img'
+          }
+          return `assets/${extType}/[name]-[hash][extname]`
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js'
+      }
+    }
+  },
   plugins: [
     vue(),
     AutoImport({
