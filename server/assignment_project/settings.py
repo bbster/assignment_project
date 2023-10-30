@@ -120,10 +120,10 @@ USE_TZ = True
 # Static 파일 설정
 STATIC_URL = '/assets/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),
+    os.path.join("/templates/assignment_templates", 'assets'),
 ]
 
-STATIC_ROOT = os.path.join("/Users/bcd/Desktop/side_project/assignment/server/templates/assets")
+STATIC_ROOT = os.path.join("/templates/assignment_templates")
 
 # Media 파일 설정
 MEDIA_URL = '/media/'
