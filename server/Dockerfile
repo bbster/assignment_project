@@ -26,8 +26,8 @@ COPY manage.py ${APP_HOME}/manage.py
 
 # client
 COPY staticfiles ${APP_HOME}/staticfiles
-COPY assets ${APP_HOME}/assets
 COPY templates ${APP_HOME}/templates
+
 
 # runserver.sh 파일 복사
 COPY runserver.sh ${APP_HOME}/runserver.sh
