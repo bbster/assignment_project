@@ -11,7 +11,7 @@ export const company = z.object({
 
 export const jobDescription = z.object({
   id,
-  company: z.number(),
+  company,
   position: z.string(),
   content: z.string(),
   reward: z.number(),

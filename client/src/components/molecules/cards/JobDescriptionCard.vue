@@ -1,8 +1,14 @@
 <script setup lang="ts">
 const props = defineProps<{ jobDescription: JobDescription }>()
 
+const rewardFormat = new Intl.NumberFormat('ko-KR', { currency: 'KRW' })
+const dateTimeFormte = new Intl.DateTimeFormat('ko-KR', {
+  dateStyle: 'full',
+  timeZone: 'Asia/Seoul'
+})
+
 const title = computed(
-  () => `[${props.jobDescription.company}] ${props.jobDescription.position} 채용`
+  () => `[${props.jobDescription.company.company_name}] ${props.jobDescription.position} 채용`
 )
 
 const position = computed(() => `${props.jobDescription.position} 채용 공고`)
@@ -11,15 +17,17 @@ const content = computed(() => {
   const startDate = new Date(props.jobDescription.start_date)
   const endDate = new Date(props.jobDescription.end_date)
 
-  const dateTimeFormte = new Intl.DateTimeFormat('ko-KR', {
-    dateStyle: 'full',
-    timeZone: 'Australia/Sydney'
-  })
-  return `합격자에게는 ${props.jobDescription.reward}원의 사이닝 보너스를 드려요.\n
+  return `합격자에게는 ${rewardFormat.format(
+    props.jobDescription.reward
+  )}원의 사이닝 보너스를 드려요.\n
     ${dateTimeFormte.format(startDate)}부터 ${dateTimeFormte.format(endDate)}까지`
 })
 
 const skills = computed(() => props.jobDescription.skill.split(',').map((value) => value.trim()))
+
+const region = computed(
+  () => `${props.jobDescription.company.country} ${props.jobDescription.company.city}`
+)
 </script>
 
 <template>
@@ -27,12 +35,13 @@ const skills = computed(() => props.jobDescription.skill.split(',').map((value) 
     <h2 class="job-description-card__title">{{ title }}</h2>
     <div>
       <p class="job-description-card__position">{{ position }}</p>
+      <p class="job-description-card__region">{{ region }}</p>
+      <p class="job-description-card__content">{{ content }}</p>
       <div class="job-description-card__skills">
         <span class="job-description-card__skills__item" v-for="skill in skills" :key="skill">
           {{ skill }}
         </span>
       </div>
-      <p class="job-description-card__content">{{ content }}</p>
     </div>
   </article>
 </template>
@@ -56,6 +65,18 @@ const skills = computed(() => props.jobDescription.skill.split(',').map((value) 
     text-align: right;
     margin: 8px 0;
   }
+  &__region {
+    font-size: 0.6em;
+    font-weight: 600;
+    text-align: right;
+    margin: 8px 0;
+  }
+  &__content {
+    font-size: 0.8em;
+    text-align: right;
+    margin: 8px 0;
+    white-space: pre-line;
+  }
   &__skills {
     display: flex;
     justify-content: flex-end;
@@ -72,12 +93,6 @@ const skills = computed(() => props.jobDescription.skill.split(',').map((value) 
         margin: 0 0 0 6px;
       }
     }
-  }
-  &__content {
-    font-size: 0.8em;
-    text-align: right;
-    margin: 8px 0;
-    white-space: pre-line;
   }
 }
 </style>
