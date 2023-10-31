@@ -1,9 +1,9 @@
 import { z } from 'zod'
 
-const CompanyId = z.number().optional()
+const companyId = z.number()
 
-const Company = z.object({
-  id: CompanyId,
+export const company = z.object({
+  id: companyId,
   company_name: z.string().max(100),
   country: z.string(),
   city: z.string()
