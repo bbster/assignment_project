@@ -2,6 +2,10 @@
   "name": "assignment-project",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=1.22.0"
+  },
   "scripts": {
     "dev": "vite --port 3000",
     "build": "run-p type-check \"build-only {@}\" --",
