@@ -16,6 +16,7 @@ django-rest-swagger = "^2.2.0"
 drf-yasg = "^1.21.7"
 django-cors-headers = "^4.3.0"
 environ = "^1.0"
+drf-spectacular = "^0.26.5"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -30,8 +30,10 @@ class JobDescription(BaseModel):
 class User(BaseModel):
     name = models.CharField(max_length=50, help_text='이름')
     age = models.PositiveIntegerField(help_text='나이')
-    job_descriptions = models.ManyToManyField(to="job_description.JobDescription", through="job_description.ResumeHistory",
-                                              related_name="users", through_fields=("user", "job_description"))
+    job_descriptions = models.ManyToManyField(to="job_description.JobDescription",
+                                              through="job_description.ResumeHistory",
+                                              related_name="users",
+                                              through_fields=("user", "job_description"))
 
 
 class ResumeHistory(BaseModel):
@@ -41,5 +43,5 @@ class ResumeHistory(BaseModel):
                                     name='unique_in_application')
         ]
 
-    job_description = models.ForeignKey(JobDescription, on_delete=models.CASCADE, db_comment='해당 지원이력을 가지고 있는 채용공고입니다.')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, db_comment='해당 지원이력을 가지고 있는 유저 입니다.')
+    job_description = models.ForeignKey(JobDescription, on_delete=models.PROTECT, db_comment='해당 지원이력을 가지고 있는 채용공고입니다.')
+    user = models.ForeignKey(User, on_delete=models.PROTECT, db_comment='해당 지원이력을 가지고 있는 유저 입니다.')

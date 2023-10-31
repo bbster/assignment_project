@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# git pull origin main
+git pull origin main
+
 # Stop the Docker container
 docker stop sideproject_server
 

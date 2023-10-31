@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'drf_yasg',
     'corsheaders',
+    'drf_spectacular',
 
     # my apps
     'job_description.apps.EmploymentConfig',
@@ -50,7 +51,14 @@ ROOT_URLCONF = 'assignment_project.urls'
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'SidePorject API DOCS',
+    'DESCRIPTION': 'SideProject API 문서',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
 }
 
 TEMPLATES = [
@@ -127,7 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # CORS 추가
 CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:8000', 'http://localhost:3000', 'http://192.169.0.2:8000', 'http://192.168.64.1:8000')
+    'http://127.0.0.1:8000', 'http://localhost:3000', 'http://192.169.0.2:8000', 'http://192.168.64.1:8000', 'http://49.1.213.232:8000')
 CORS_ALLOW_CREDENTIALS = True
 
 # Default primary key field type

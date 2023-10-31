@@ -1,5 +1,6 @@
 # 부모 이미지로 공식 Python 실행 환경 사용
 FROM python:3.11.6
+LABEL maintainer="Lee Ji Chan"
 
 ENV APP_HOME=/home/service/assignment
 
@@ -25,7 +26,6 @@ COPY account ${APP_HOME}/account
 COPY manage.py ${APP_HOME}/manage.py
 
 # client
-COPY staticfiles ${APP_HOME}/staticfiles
 COPY templates ${APP_HOME}/templates
 
 # runserver.sh 파일 복사

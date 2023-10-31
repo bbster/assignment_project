@@ -1,3 +1,5 @@
+from drf_spectacular.views import SpectacularAPIView
+
 from django.contrib import admin
 from django.urls import path
 
@@ -35,6 +37,7 @@ urlpatterns = [
     # swagger
     path('api/doc/swagger', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('api/doc/redoc', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('api/doc/spectacular', SpectacularAPIView.as_view(), name='schema'),
 
     # job description
     path('api/v1/job-descriptions', JobDescriptionListCreateView.as_view()),
@@ -53,4 +56,4 @@ urlpatterns = [
     # account
     path('api/v1/session', SessionAPIView.as_view()),
     path('api/v1/token', TokenAPIView.as_view()),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
