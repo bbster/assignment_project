@@ -1,7 +1,4 @@
-const BASE_API_URL =
-  process.env.NODE_ENV === 'production'
-    ? 'http://localhost/api/v1'
-    : 'http://49.1.213.232:8000/api/v1'
+const BASE_API_URL = 'http://49.1.213.232:8000/api/v1'
 
 export const useFetchJobDescriptions = () => {
   // const fetcher = createFetch({
