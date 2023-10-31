@@ -5,24 +5,26 @@ import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
+const buildDir = '../server/templates/assignment_templates'
+const assetsBuildDir = 'assets'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    emptyOutDir: true,
     rollupOptions: {
       output: {
-        dir: '../server/templates/job_description',
+        dir: buildDir,
         assetFileNames: (assetInfo) => {
           let extType = assetInfo?.name?.split('.').at(-1)
-          if (!extType) return `assets/[name]-[hash][extname]`
+          if (!extType) return `${assetsBuildDir}/[name]-[hash][extname]`
 
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
             extType = 'img'
           }
-          return `assets/${extType}/[name]-[hash][extname]`
+          return `${assetsBuildDir}/${extType}/[name]-[hash][extname]`
         },
-        chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js'
+        chunkFileNames: `${assetsBuildDir}/js/[name]-[hash].js`,
+        entryFileNames: `${assetsBuildDir}/js/[name]-[hash].js`
       }
     }
   },
