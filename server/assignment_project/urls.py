@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.urls import path
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
@@ -24,7 +27,6 @@ schema_view = get_schema_view(
     ),
     public=True,
 )
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -51,4 +53,4 @@ urlpatterns = [
     # account
     path('api/v1/session', SessionAPIView.as_view()),
     path('api/v1/token', TokenAPIView.as_view()),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
