@@ -1,0 +1,1 @@
+import{_ as c,o as n,c as t,d as s,a as _,t as r,u as p,b as m}from"./index-7d2901c4.js";const u={};function i(a,e){return n(),t("article",null,"대에충 회사 내용")}const l=c(u,[["render",i]]),C=s({__name:"HomeView",setup(a){const{data:e}=useFetchCompanies();return(d,f)=>{const o=l;return n(),t("main",null,[_(r(p(e))+" ",1),m(o)])}}});export{C as default};
