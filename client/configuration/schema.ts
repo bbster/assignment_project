@@ -16,6 +16,6 @@ export const jobDescription = z.object({
   content: z.string(),
   reward: z.number(),
   skill: z.string().regex(/^([^,]*,){0,4}[^,]*$/),
-  start_date: z.date(),
-  end_date: z.date()
+  start_date: z.string(),
+  end_date: z.string()
 })
