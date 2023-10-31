@@ -3,10 +3,14 @@ import * as Schema from './schema'
 
 declare global {
   export type Company = z.infer<typeof Schema.company>
+  export type JobDescription = z.infer<typeof Schema.jobDescription>
 
   export type APIRouters = {
     '/companies': {
       get: () => Company[]
+    }
+    '/job-descriptions': {
+      get: () => JobDescription[]
     }
   }
 

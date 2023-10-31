@@ -3,16 +3,16 @@ const BASE_API_URL =
     ? 'http://localhost/api/v1'
     : 'http://49.1.213.232:8000/api/v1'
 
-export const useFetchCompanies = () => {
+export const useFetchJobDescriptions = () => {
   // const fetcher = createFetch({
   //   baseUrl: BASE_API_URL,
   //   fetchOptions: {},
   //   options: { fetch }
   // })
 
-  const response = useFetch(`${BASE_API_URL}/companies`)
+  const response = useFetch(`${BASE_API_URL}/job-descriptions`)
     .get()
-    .json<APIRouterReturnType<`/companies`, 'get'>>()
+    .json<APIRouterReturnType<`/job-descriptions`, 'get'>>()
 
   return response
 }

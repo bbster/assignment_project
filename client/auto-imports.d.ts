@@ -165,6 +165,7 @@ declare global {
   const useFavicon: typeof import('@vueuse/core')['useFavicon']
   const useFetch: typeof import('@vueuse/core')['useFetch']
   const useFetchCompanies: typeof import('./src/composables/useFetchCompanies')['useFetchCompanies']
+  const useFetchJobDescriptions: typeof import('./src/composables/useFetchJobDescriptions')['useFetchJobDescriptions']
   const useFileDialog: typeof import('@vueuse/core')['useFileDialog']
   const useFileSystemAccess: typeof import('@vueuse/core')['useFileSystemAccess']
   const useFocus: typeof import('@vueuse/core')['useFocus']

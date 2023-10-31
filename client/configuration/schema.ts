@@ -1,10 +1,21 @@
 import { z } from 'zod'
 
-const companyId = z.number()
+const id = z.number()
 
 export const company = z.object({
-  id: companyId,
+  id,
   company_name: z.string().max(100),
   country: z.string(),
   city: z.string()
+})
+
+export const jobDescription = z.object({
+  id,
+  company: z.number(),
+  position: z.string(),
+  content: z.string(),
+  reward: z.number(),
+  skill: z.string().regex(/^([^,]*,){0,4}[^,]*$/),
+  start_date: z.date(),
+  end_date: z.date()
 })
