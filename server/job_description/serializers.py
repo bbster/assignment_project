@@ -4,6 +4,8 @@ from job_description.models import JobDescription, Company, User, ResumeHistory
 
 
 class JobDescriptionListCreateSerializer(serializers.ModelSerializer):
+    company = serializers.SerializerMethodField()
+
     class Meta:
         model = JobDescription
         fields = ['id', 'company', 'position', 'content', 'reward', 'skill', 'start_date', 'end_date']
@@ -14,13 +16,22 @@ class JobDescriptionListCreateSerializer(serializers.ModelSerializer):
 
         return data
 
+    def get_company(self, obj):
+        company = obj.company
+        return {
+            "id": company.id,
+            "company_name": company.company_name,
+            "country": company.country,
+            "city": company.city
+        }
+
 
 class JobDescriptionRetrieveUpdateDestroySerializer(serializers.ModelSerializer):
-    company = serializers.CharField(source='company.id', read_only=True)
 
     class Meta:
         model = JobDescription
         fields = ['id', 'company', 'position', 'content', 'reward', 'skill', 'start_date', 'end_date']
+
 
     def to_representation(self, instance):
         data = super(JobDescriptionRetrieveUpdateDestroySerializer, self).to_representation(instance)
@@ -32,9 +43,24 @@ class JobDescriptionRetrieveUpdateDestroySerializer(serializers.ModelSerializer)
 
 
 class CompanyListCreateSerializer(serializers.ModelSerializer):
+    job_description = serializers.SerializerMethodField()
+
     class Meta:
         model = Company
-        fields = ['id', 'company_name', 'country', 'city']
+        fields = ['id', 'company_name', 'country', 'city', 'job_description']
+
+    def get_job_description(self, obj):
+        job_description = obj.job_description
+
+        return {
+            "company": job_description.company_name,
+            "position": job_description.country,
+            "content": job_description.city,
+            "reward": job_description.city,
+            "skill": job_description.city,
+            "start_date": job_description.city,
+            "end_date": job_description.city,
+        }
 
 
 class CompanyRetrieveUpdateDestroySerializer(serializers.ModelSerializer):
