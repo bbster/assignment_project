@@ -5,25 +5,32 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('job_description', '0001_initial'),
+        ("job_description", "0001_initial"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='user',
-            old_name='job_description',
-            new_name='job_descriptions',
+            model_name="user",
+            old_name="job_description",
+            new_name="job_descriptions",
         ),
         migrations.AlterField(
-            model_name='resumehistory',
-            name='job_description',
-            field=models.ForeignKey(db_comment='해당 지원이력을 가지고 있는 채용공고입니다.', on_delete=django.db.models.deletion.PROTECT, to='job_description.jobdescription'),
+            model_name="resumehistory",
+            name="job_description",
+            field=models.ForeignKey(
+                db_comment="해당 지원이력을 가지고 있는 채용공고입니다.",
+                on_delete=django.db.models.deletion.PROTECT,
+                to="job_description.jobdescription",
+            ),
         ),
         migrations.AlterField(
-            model_name='resumehistory',
-            name='user',
-            field=models.ForeignKey(db_comment='해당 지원이력을 가지고 있는 유저 입니다.', on_delete=django.db.models.deletion.PROTECT, to='job_description.user'),
+            model_name="resumehistory",
+            name="user",
+            field=models.ForeignKey(
+                db_comment="해당 지원이력을 가지고 있는 유저 입니다.",
+                on_delete=django.db.models.deletion.PROTECT,
+                to="job_description.user",
+            ),
         ),
     ]

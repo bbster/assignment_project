@@ -8,8 +8,10 @@ for object in JobDescription.objects.all():
 
 
 # Full text Search
-query = SearchQuery('백엔드')  # 검색어 설정
-result = JobDescription.objects.annotate(search=SearchVector('position')).filter(search=query)
+query = SearchQuery("백엔드")  # 검색어 설정
+result = JobDescription.objects.annotate(search=SearchVector("position")).filter(
+    search=query
+)
 
 # Explitcit Search
-result2 = JobDescription.objects.filter(position__icontains='백엔드')
+result2 = JobDescription.objects.filter(position__icontains="백엔드")

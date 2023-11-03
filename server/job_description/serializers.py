@@ -8,11 +8,20 @@ class JobDescriptionListCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = JobDescription
-        fields = ['id', 'company', 'position', 'content', 'reward', 'skill', 'start_date', 'end_date']
+        fields = [
+            "id",
+            "company",
+            "position",
+            "content",
+            "reward",
+            "skill",
+            "start_date",
+            "end_date",
+        ]
 
     def validate(self, data):
-        if data['start_date'] > data['end_date']:
-            raise serializers.ValidationError('채용시작일이 채용마감일보다 늦습니다.')
+        if data["start_date"] > data["end_date"]:
+            raise serializers.ValidationError("채용시작일이 채용마감일보다 늦습니다.")
 
         return data
 
@@ -22,22 +31,35 @@ class JobDescriptionListCreateSerializer(serializers.ModelSerializer):
             "id": company.id,
             "company_name": company.company_name,
             "country": company.country,
-            "city": company.city
+            "city": company.city,
         }
 
 
 class JobDescriptionRetrieveUpdateDestroySerializer(serializers.ModelSerializer):
-
     class Meta:
         model = JobDescription
-        fields = ['id', 'company', 'position', 'content', 'reward', 'skill', 'start_date', 'end_date']
-
+        fields = [
+            "id",
+            "company",
+            "position",
+            "content",
+            "reward",
+            "skill",
+            "start_date",
+            "end_date",
+        ]
 
     def to_representation(self, instance):
-        data = super(JobDescriptionRetrieveUpdateDestroySerializer, self).to_representation(instance)
+        data = super(
+            JobDescriptionRetrieveUpdateDestroySerializer, self
+        ).to_representation(instance)
 
-        filtered_job_descriptions = JobDescription.objects.filter(company=data["company"])
-        data["job_description"] = [job_description.id for job_description in filtered_job_descriptions]
+        filtered_job_descriptions = JobDescription.objects.filter(
+            company=data["company"]
+        )
+        data["job_description"] = [
+            job_description.id for job_description in filtered_job_descriptions
+        ]
 
         return data
 
@@ -47,7 +69,7 @@ class CompanyListCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Company
-        fields = ['id', 'company_name', 'country', 'city', 'job_description']
+        fields = ["id", "company_name", "country", "city", "job_description"]
 
     def get_job_description(self, obj):
         job_description = obj.job_description
@@ -66,28 +88,28 @@ class CompanyListCreateSerializer(serializers.ModelSerializer):
 class CompanyRetrieveUpdateDestroySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
-        fields = ['id', 'company_name', 'country', 'city']
+        fields = ["id", "company_name", "country", "city"]
 
 
 class UserCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'name', 'age']
+        fields = ["id", "name", "age"]
 
 
 class UserRetrieveUpdateDestroySerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'name', 'age']
+        fields = ["id", "name", "age"]
 
 
 class ResumeHistoryListCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = ResumeHistory
-        fields = ['id', 'job_description', 'user']
+        fields = ["id", "job_description", "user"]
 
 
 class ResumeHistoryRetrieveDestroySerializer(serializers.ModelSerializer):
     class Meta:
         model = ResumeHistory
-        fields = ['id', 'job_description', 'user']
+        fields = ["id", "job_description", "user"]
