@@ -70,24 +70,27 @@ class JobDescriptionRetrieveUpdateDestroySerializer(
 
 
 class CompanyListCreateSerializer(serializers.ModelSerializer):
-    job_description = serializers.SerializerMethodField()
+    job_descriptions = serializers.SerializerMethodField()
 
     class Meta:
         model = Company
-        fields = ["id", "company_name", "country", "city", "job_description"]
+        fields = ["id", "company_name", "country", "city", "job_descriptions"]
 
-    def get_job_description(self, obj):
-        job_description = obj.job_description
+    def get_job_descriptions(self, obj):
+        job_descriptions = obj.job_descriptions.all()
 
-        return {
-            "company": job_description.company_name,
-            "position": job_description.country,
-            "content": job_description.city,
-            "reward": job_description.city,
-            "skill": job_description.city,
-            "start_date": job_description.city,
-            "end_date": job_description.city,
-        }
+        return [
+            {
+                "company": job_description.company_id,
+                "position": job_description.position,
+                "content": job_description.content,
+                "reward": job_description.reward,
+                "skill": job_description.skill,
+                "start_date": job_description.start_date,
+                "end_date": job_description.end_date,
+            }
+            for job_description in job_descriptions
+        ]
 
 
 class CompanyRetrieveUpdateDestroySerializer(serializers.ModelSerializer):

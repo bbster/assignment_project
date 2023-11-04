@@ -99,13 +99,13 @@ WSGI_APPLICATION = "assignment_project.wsgi.application"
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sideproject',
-        'USER': 'admin',
-        'PASSWORD': '1r2r3r4r',
-        'HOST': '192.168.64.1',
-        'PORT': 5432,
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "sideproject",
+        "USER": "admin",
+        "PASSWORD": "1r2r3r4r",
+        "HOST": "192.168.64.1",
+        "PORT": 5432,
     }
 }
 
