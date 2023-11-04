@@ -91,23 +91,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "assignment_project.wsgi.application"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    },
-}
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'sideproject',
-#         'USER': 'admin',
-#         'PASSWORD': '1r2r3r4r',
-#         'HOST': '192.168.64.1',
-#         'PORT': 5432,
-#     }
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#     },
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sideproject',
+        'USER': 'admin',
+        'PASSWORD': '1r2r3r4r',
+        'HOST': '192.168.64.1',
+        'PORT': 5432,
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -142,22 +142,12 @@ USE_TZ = True
 # Static 파일 설정
 STATIC_URL = "/assets/"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "templates", "assignment_templates", "assets"),
-]
-
 # Media 파일 설정
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # CORS 추가
-CORS_ORIGIN_WHITELIST = (
-    "http://127.0.0.1:8000",
-    "http://localhost:3000",
-    "http://192.169.0.2:8000",
-    "http://192.168.64.1:8000",
-    "http://49.1.213.232:8000",
-)
+CORS_ORIGIN_WHITELIST = ("http://127.0.0.1:8000",)
 CORS_ALLOW_CREDENTIALS = True
 
 # Default primary key field type
