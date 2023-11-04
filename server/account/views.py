@@ -88,5 +88,6 @@ class SessionAPIView(APIView):
         login(request, user)
 
         return Response(
-            {"message": "로그인 성공"}, status=status.HTTP_201_CREATED,
+            {"message": "로그인 성공"},
+            status=status.HTTP_201_CREATED,
         )

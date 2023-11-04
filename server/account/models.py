@@ -4,7 +4,8 @@ from django.db import models
 
 class Token(models.Model):
     user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
     )
     token = models.CharField(max_length=500)
     auth_number = models.CharField(max_length=6)
