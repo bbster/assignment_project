@@ -3,6 +3,12 @@
 # git pull origin main
 git pull origin main
 
+# client build
+cd client
+yarn
+yarn build
+cd ..
+
 # Remove the Dockerfile container
 docker rm -f sideproject_server
 
