@@ -45,8 +45,9 @@ class ResumeHistory(BaseModel):
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=["job_description", "user"], name="unique_in_application"
-            )
+                fields=["job_description", "user"],
+                name="unique_in_application",
+            ),
         ]
 
     job_description = models.ForeignKey(

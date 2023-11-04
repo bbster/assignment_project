@@ -18,7 +18,10 @@ class TodoModel(BaseModel):
 class A(models.Model):
     name = models.CharField(max_length=100)
     b = models.ForeignKey(
-        "todo_app.B", on_delete=models.CASCADE, related_name="a_set", null=True
+        "todo_app.B",
+        on_delete=models.CASCADE,
+        related_name="a_set",
+        null=True,
     )
 
 

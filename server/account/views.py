@@ -7,9 +7,12 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from account.models import Token
-from account.serializers import TokenSerializer, SessionSerializer
-
-from account.utils import generate_auth_number, send_auth_number, generate_auth_token
+from account.serializers import SessionSerializer, TokenSerializer
+from account.utils import (
+    generate_auth_number,
+    generate_auth_token,
+    send_auth_number,
+)
 
 
 class TokenAPIView(APIView):
@@ -43,7 +46,8 @@ class TokenAPIView(APIView):
             return Response({"token": token}, status=status.HTTP_201_CREATED)
         else:
             return Response(
-                {"message": "인증 실패!"}, status=status.HTTP_401_UNAUTHORIZED
+                {"message": "인증 실패!"},
+                status=status.HTTP_401_UNAUTHORIZED,
             )
 
 
@@ -67,7 +71,8 @@ class SessionAPIView(APIView):
 
         if auth_number != token.auth_number:
             return Response(
-                {"message": "인증번호가 틀립니다."}, status=status.HTTP_401_UNAUTHORIZED
+                {"message": "인증번호가 틀립니다."},
+                status=status.HTTP_401_UNAUTHORIZED,
             )
 
         is_expired = token.expired_at <= now()
@@ -82,4 +87,6 @@ class SessionAPIView(APIView):
         # 로그인 처리
         login(request, user)
 
-        return Response({"message": "로그인 성공"}, status=status.HTTP_201_CREATED)
+        return Response(
+            {"message": "로그인 성공"}, status=status.HTTP_201_CREATED,
+        )

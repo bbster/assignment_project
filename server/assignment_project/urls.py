@@ -1,24 +1,22 @@
-from drf_spectacular.views import SpectacularAPIView
-
 from django.contrib import admin
 from django.urls import path
-
-from drf_yasg.views import get_schema_view
+from drf_spectacular.views import SpectacularAPIView
 from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
 
 from account.views import SessionAPIView, TokenAPIView
 from job_description.views import (
+    CompanyListCreateView,
+    CompanyRetrieveDestroyView,
     JobDescriptionListCreateView,
     JobDescriptionRetrieveUpdateDestroyAPIView,
-    UserCreateView,
-    UserRetrieveUpdateDestroyView,
     ResumeHistoryListCreateView,
     ResumeHistoryRetrieveDestroyView,
-    CompanyRetrieveDestroyView,
-    CompanyListCreateView,
+    UserCreateView,
+    UserRetrieveUpdateDestroyView,
     index,
 )
-from todo_app.views import TodoRetrieveAPIView, TodoListCreateAPIView
+from todo_app.views import TodoListCreateAPIView, TodoRetrieveAPIView
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -56,7 +54,8 @@ urlpatterns = [
     path("api/v1/users/<int:pk>", UserRetrieveUpdateDestroyView.as_view()),
     path("api/v1/resume-histories", ResumeHistoryListCreateView.as_view()),
     path(
-        "api/v1/resume-histories/<int:pk>", ResumeHistoryRetrieveDestroyView.as_view()
+        "api/v1/resume-histories/<int:pk>",
+        ResumeHistoryRetrieveDestroyView.as_view(),
     ),
     # todo_app
     path("api/v1/todos", TodoListCreateAPIView.as_view()),

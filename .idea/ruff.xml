@@ -2,5 +2,6 @@
 <project version="4">
   <component name="RuffConfigService">
     <option name="globalRuffExecutablePath" value="$USER_HOME$/.pyenv/shims/ruff" />
+    <option name="projectRuffExecutablePath" value="$USER_HOME$/.pyenv/versions/3.11.6_crawling/bin/ruff" />
   </component>
 </project>

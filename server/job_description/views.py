@@ -3,25 +3,24 @@ import os
 from django.conf import settings
 from django.db import IntegrityError
 from django.shortcuts import render
-
-from rest_framework import serializers, filters
+from rest_framework import filters, serializers
 from rest_framework.generics import (
-    RetrieveUpdateDestroyAPIView,
-    ListCreateAPIView,
     CreateAPIView,
+    ListCreateAPIView,
     RetrieveDestroyAPIView,
+    RetrieveUpdateDestroyAPIView,
 )
 
-from job_description.models import JobDescription, Company, User, ResumeHistory
+from job_description.models import Company, JobDescription, ResumeHistory, User
 from job_description.serializers import (
-    JobDescriptionRetrieveUpdateDestroySerializer,
-    JobDescriptionListCreateSerializer,
+    CompanyListCreateSerializer,
     CompanyRetrieveUpdateDestroySerializer,
-    UserCreateSerializer,
-    UserRetrieveUpdateDestroySerializer,
+    JobDescriptionListCreateSerializer,
+    JobDescriptionRetrieveUpdateDestroySerializer,
     ResumeHistoryListCreateSerializer,
     ResumeHistoryRetrieveDestroySerializer,
-    CompanyListCreateSerializer,
+    UserCreateSerializer,
+    UserRetrieveUpdateDestroySerializer,
 )
 
 
@@ -91,7 +90,7 @@ class ResumeHistoryListCreateView(ListCreateAPIView):
             serializer.save()
         except IntegrityError:
             raise serializers.ValidationError(
-                "하나의 지원공고에는 한번만 지원 할 수 있습니다."
+                "하나의 지원공고에는 한번만 지원 할 수 있습니다.",
             )
 
 
@@ -102,6 +101,9 @@ class ResumeHistoryRetrieveDestroyView(RetrieveDestroyAPIView):
 
 def index(request):
     template_path = os.path.join(
-        settings.BASE_DIR, "templates", "assignment_templates", "index.html"
+        settings.BASE_DIR,
+        "templates",
+        "assignment_templates",
+        "index.html",
     )
     return render(request, template_path)

@@ -5,14 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cc477d9-09be-4fde-8b4d-d680b30740c9" name="Changes" comment="ruff">
-      <change afterPath="$PROJECT_DIR$/.idea/ruff.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ruff.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ruff.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.github/workflows/lint.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.github/workflows/main.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.pre-commit-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/assignment_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/assignment_project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/assignment_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/assignment_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/migrations/0002_rename_job_description_user_job_descriptions_and_more.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/migrations/0002_rename_job_description_user_job_descriptions_and_more.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/text_serach.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/text_serach.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/manage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/todo_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/todo_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/todo_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/todo_app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -346,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699023259390</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="ruff">
+      <option name="closed" value="true" />
+      <created>1699089184117</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1699089184117</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

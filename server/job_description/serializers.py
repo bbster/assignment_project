@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from job_description.models import JobDescription, Company, User, ResumeHistory
+from job_description.models import Company, JobDescription, ResumeHistory, User
 
 
 class JobDescriptionListCreateSerializer(serializers.ModelSerializer):
@@ -21,7 +21,9 @@ class JobDescriptionListCreateSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         if data["start_date"] > data["end_date"]:
-            raise serializers.ValidationError("채용시작일이 채용마감일보다 늦습니다.")
+            raise serializers.ValidationError(
+                "채용시작일이 채용마감일보다 늦습니다.",
+            )
 
         return data
 
@@ -35,7 +37,9 @@ class JobDescriptionListCreateSerializer(serializers.ModelSerializer):
         }
 
 
-class JobDescriptionRetrieveUpdateDestroySerializer(serializers.ModelSerializer):
+class JobDescriptionRetrieveUpdateDestroySerializer(
+    serializers.ModelSerializer,
+):
     class Meta:
         model = JobDescription
         fields = [
@@ -51,11 +55,12 @@ class JobDescriptionRetrieveUpdateDestroySerializer(serializers.ModelSerializer)
 
     def to_representation(self, instance):
         data = super(
-            JobDescriptionRetrieveUpdateDestroySerializer, self
+            JobDescriptionRetrieveUpdateDestroySerializer,
+            self,
         ).to_representation(instance)
 
         filtered_job_descriptions = JobDescription.objects.filter(
-            company=data["company"]
+            company=data["company"],
         )
         data["job_description"] = [
             job_description.id for job_description in filtered_job_descriptions
