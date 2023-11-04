@@ -1,1 +1,0 @@
-import{_ as n,o as e,c,a as r}from"./index-bb6a415c.js";const a={};function s(o,t){return e(),c("article",null,"대에충 회사 내용")}const l=n(a,[["render",s]]),m={};function f(o,t){const _=l;return e(),c("main",null,[r(_)])}const u=n(m,[["render",f]]);export{u as default};

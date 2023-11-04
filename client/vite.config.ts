@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
-const buildDir = '../server/templates/assignment_templates'
+const buildDir = 'dist'
 const assetsBuildDir = 'assets'
 
 // https://vitejs.dev/config/

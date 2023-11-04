@@ -8,7 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     CompaniesBoard: typeof import('./src/components/organisms/boards/CompaniesBoard.vue')['default']
-    CompanyCard: typeof import('./src/components/molecules/cards/companyCard.vue')['default']
+    CompanyCard: typeof import('./src/components/molecules/cards/CompanyCard.vue')['default']
     JobDescriptionCard: typeof import('./src/components/molecules/cards/JobDescriptionCard.vue')['default']
     JobDescriptionsBoard: typeof import('./src/components/organisms/boards/JobDescriptionsBoard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
