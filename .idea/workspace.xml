@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cc477d9-09be-4fde-8b4d-d680b30740c9" name="Changes" comment="ruff">
-      <change afterPath="$PROJECT_DIR$/docker_deploy_script.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ruff.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ruff.xml" afterDir="false" />
+    <list default="true" id="3cc477d9-09be-4fde-8b4d-d680b30740c9" name="Changes" comment="배포 세팅">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/components.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker_deploy_script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/docker_deploy_script.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/assignment_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/assignment_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/docker_connect.sh" beforeDir="false" afterPath="$PROJECT_DIR$/docker_connect.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/docker_deploy_script.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/runserver.sh" beforeDir="false" afterPath="$PROJECT_DIR$/server/runserver.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/templates/assignment_templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/templates/assignment_templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/todo_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/todo_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/job_description/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/job_description/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/server/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -378,7 +369,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699115030215</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="ruff">
+      <option name="closed" value="true" />
+      <created>1699129523975</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1699129523975</updated>
+    </task>
+    <task id="LOCAL-00039" summary="배포 세팅">
+      <option name="closed" value="true" />
+      <created>1699129568964</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1699129568964</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -423,7 +430,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: 마이그래이션 파일 추가" />
     <MESSAGE value="add: docker 파일 추가" />
     <MESSAGE value="feat: todo 앱 추가" />
     <MESSAGE value="ruff 추가" />
@@ -448,6 +454,7 @@
     <MESSAGE value="fix: 시리얼라이저 수정&#10;&#10;company에 대한 메서드 필드 추가" />
     <MESSAGE value="ruff, pre-commit" />
     <MESSAGE value="ruff" />
-    <option name="LAST_COMMIT_MESSAGE" value="ruff" />
+    <MESSAGE value="배포 세팅" />
+    <option name="LAST_COMMIT_MESSAGE" value="배포 세팅" />
   </component>
 </project>
