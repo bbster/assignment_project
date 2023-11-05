@@ -7,8 +7,13 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppBrand: typeof import('./src/components/atoms/AppBrand.vue')['default']
+    AppHeader: typeof import('./src/components/organisms/headers/AppHeader.vue')['default']
+    AppLayout: typeof import('./src/components/_layouts/AppLayout.vue')['default']
+    AppNavigation: typeof import('./src/components/organisms/navigations/AppNavigation.vue')['default']
+    Brand: typeof import('./src/components/atoms/brand.vue')['default']
     CompaniesBoard: typeof import('./src/components/organisms/boards/CompaniesBoard.vue')['default']
-    CompanyCard: typeof import('./src/components/molecules/cards/companyCard.vue')['default']
+    CompanyCard: typeof import('./src/components/molecules/cards/CompanyCard.vue')['default']
     JobDescriptionCard: typeof import('./src/components/molecules/cards/JobDescriptionCard.vue')['default']
     JobDescriptionsBoard: typeof import('./src/components/organisms/boards/JobDescriptionsBoard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

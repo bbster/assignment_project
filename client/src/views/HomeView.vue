@@ -3,11 +3,11 @@ const { data } = useFetchCompanies()
 </script>
 
 <template>
-  <main>
+  <AppLayout>
     <template v-if="data">
       <CompaniesBoard heading="자 이직할 시간이다 둘러봐라" :companies="data" />
     </template>
-  </main>
+  </AppLayout>
 </template>
 
 <style></style>
