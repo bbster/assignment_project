@@ -1,28 +1,22 @@
 <script setup lang="ts">
 const props = defineProps<{ jobDescription: JobDescription }>()
 
-const rewardFormat = new Intl.NumberFormat('ko-KR', { currency: 'KRW' })
-const dateTimeFormat = new Intl.DateTimeFormat('ko-KR', {
-  dateStyle: 'long',
-  timeZone: 'Asia/Seoul'
-})
-const formatDate = (date: Date) => dateTimeFormat.format(date).replace(/\s+/g, '&nbsp;')
+const { formatDate, formatReward } = useTemplateFormat()
 
-const title = computed(
-  () => `[${props.jobDescription.company.company_name}] ${props.jobDescription.position} 채용`
-)
+const title = computed(() => {
+  return `[${props.jobDescription.company.company_name}] ${props.jobDescription.position} 채용`
+})
 
 const position = computed(() => `${props.jobDescription.position} 채용 공고`)
 
 const content = computed(() => {
-  const bonus = rewardFormat.format(props.jobDescription.reward)
+  const bonus = formatReward(props.jobDescription.reward)
   return `합격자에게는 ${bonus}원의 사이닝 보너스를 드려요.`
 })
 
 const range = computed(() => {
   const start = formatDate(new Date(props.jobDescription.start_date))
   const end = formatDate(new Date(props.jobDescription.end_date))
-
   return `<strong style="font-weight: 600;">${start}</strong>부터 <strong style="font-weight: 600;">${end}</strong>까지`
 })
 
@@ -41,11 +35,13 @@ const region = computed(() => {
       <p class="job-description-card__region">{{ region }}</p>
       <p class="job-description-card__content">{{ content }}</p>
       <p class="job-description-card__range" v-html="range"></p>
-      <div class="job-description-card__skills">
-        <span class="job-description-card__skills__item" v-for="skill in skills" :key="skill">
-          {{ skill }}
-        </span>
-      </div>
+      <ul class="job-description-card__skills">
+        <li class="job-description-card__skills__item" v-for="skill in skills" :key="skill">
+          <span class="job-description-card__skills__item__badge">
+            {{ skill }}
+          </span>
+        </li>
+      </ul>
     </div>
   </article>
 </template>
@@ -92,17 +88,24 @@ const region = computed(() => {
   &__skills {
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
     margin: 32px 0;
     &__item {
-      font-size: 0.8em;
-      font-weight: 600;
-      text-align: right;
-      padding: 4px 8px;
-      background-color: #dddddd;
-      box-shadow: 1px 1px 2px #aaaaaa;
-      border-radius: 8px;
+      height: fit-content;
+      display: inline-block;
+      margin: 4px 0 0 0;
+
       &:not(:first-of-type) {
-        margin: 0 0 0 6px;
+        margin: 4px 4px 0 6px;
+      }
+      &__badge {
+        display: inline-block;
+        font-size: 0.8em;
+        font-weight: 600;
+        padding: 4px 8px;
+        background-color: #dddddd;
+        box-shadow: 1px 1px 2px #aaaaaa;
+        border-radius: 8px;
       }
     }
   }
