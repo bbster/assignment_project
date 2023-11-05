@@ -8,15 +8,17 @@ defineProps<{
 <template>
   <section class="companies-board">
     <h2 class="companies-board__title">{{ heading }}</h2>
-    <ul>
-      <li>
-        <CompanyCard
+    <div class="companies-board__contents">
+      <ul class="companies-board__contents__cards">
+        <li
+          class="companies-board__contents__cards__item"
           v-for="company in companies"
-          :company="company"
           :key="company.id"
-        ></CompanyCard>
-      </li>
-    </ul>
+        >
+          <CompanyCard class="companies-board__contents__cards__item__card" :company="company" />
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
 
@@ -28,6 +30,26 @@ defineProps<{
     margin: 18px;
     font-size: 1.6rem;
     font-weight: 600;
+    word-break: keep-all;
+  }
+  &__contents {
+    &__cards {
+      display: flex;
+      flex-wrap: wrap;
+      &__item {
+        width: 25%;
+        @media (min-width: 768px) and (max-width: 991px) {
+          width: 50%;
+        }
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        &__card {
+          min-height: 140px;
+          width: auto;
+        }
+      }
+    }
   }
 }
 </style>

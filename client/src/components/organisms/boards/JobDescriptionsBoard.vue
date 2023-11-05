@@ -8,15 +8,17 @@ defineProps<{
 <template>
   <section class="job-descriptions-board">
     <h2 class="job-descriptions-board__title">{{ heading }}</h2>
-    <ul>
-      <li>
-        <JobDescriptionCard
+    <div class="job-descriptions-board__contents">
+      <ul class="job-descriptions-board__contents__cards">
+        <li
+          class="job-descriptions-board__contents__cards__item"
           v-for="jobDescription in jobDescriptions"
-          :job-description="jobDescription"
           :key="jobDescription.id"
-        ></JobDescriptionCard>
-      </li>
-    </ul>
+        >
+          <JobDescriptionCard :job-description="jobDescription" />
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
 
@@ -28,6 +30,25 @@ defineProps<{
     margin: 18px;
     font-size: 1.6rem;
     font-weight: 600;
+    word-break: keep-all;
+  }
+  &__contents {
+    &__cards {
+      display: flex;
+      flex-wrap: wrap;
+      &__item {
+        width: 50%;
+        @media (min-width: 768px) and (max-width: 991px) {
+          width: 50%;
+        }
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        &__card {
+          width: auto;
+        }
+      }
+    }
   }
 }
 </style>

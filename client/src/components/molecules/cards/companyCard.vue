@@ -15,20 +15,21 @@ const addr = computed(() => `${props.company.country} . ${props.company.city}`)
 
 <style lang="scss" scoped>
 .company-card {
-  width: 240px;
   margin: 8px;
   padding: 18px 24px;
   box-shadow: 2px 2px 4px #dddddd;
   border-radius: 4%;
   &__title {
-    font-size: 1.2em;
-    font-weight: 600;
+    min-height: 2.4em;
     margin: 12px 0;
+    font-size: 1em;
+    font-weight: 600;
+    word-break: keep-all;
   }
   &__addr {
+    margin: 8px 0;
     font-size: 0.8em;
     text-align: right;
-    margin: 8px 0;
   }
 }
 </style>
