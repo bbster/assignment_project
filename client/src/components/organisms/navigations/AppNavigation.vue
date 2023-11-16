@@ -12,6 +12,9 @@ const routeMap = computed(() => Object.fromEntries(routes.map((r) => [r.name, r]
       <li class="app-navigation__links__item">
         <RouterLink :to="routeMap['job-description']">채용</RouterLink>
       </li>
+      <li class="app-navigation__links__item">
+        <SigninDialogTrigger>대충 로그인</SigninDialogTrigger>
+      </li>
     </ul>
   </nav>
 </template>
