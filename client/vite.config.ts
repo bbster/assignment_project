@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import RadixVueResolver from 'radix-vue/resolver'
 
 const buildDir = 'dist'
 const assetsBuildDir = 'assets'
@@ -41,6 +42,7 @@ export default defineConfig({
       dirs: ['src/components'],
       directoryAsNamespace: false,
       extensions: ['vue'],
+      resolvers: [RadixVueResolver()],
       types: [
         {
           from: 'vue-router',

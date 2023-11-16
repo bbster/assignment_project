@@ -19,3 +19,8 @@ export const jobDescription = z.object({
   start_date: z.string(),
   end_date: z.string()
 })
+
+export const account = z.object({
+  username: z.string(),
+  password: z.string()
+})
