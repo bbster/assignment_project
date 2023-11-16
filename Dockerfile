@@ -37,6 +37,7 @@ COPY ./server/todo_app ${APP_HOME}/todo_app
 COPY ./server/account ${APP_HOME}/account
 COPY ./server/manage.py ${APP_HOME}/manage.py
 
+
 # client
 COPY ./client/dist /home/client/dist/
 

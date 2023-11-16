@@ -4,8 +4,6 @@ from job_description.models import Company, JobDescription, ResumeHistory, User
 
 
 class JobDescriptionListCreateSerializer(serializers.ModelSerializer):
-    company = serializers.SerializerMethodField()
-
     class Meta:
         model = JobDescription
         fields = [
@@ -26,15 +24,6 @@ class JobDescriptionListCreateSerializer(serializers.ModelSerializer):
             )
 
         return data
-
-    def get_company(self, obj):
-        company = obj.company
-        return {
-            "id": company.id,
-            "company_name": company.company_name,
-            "country": company.country,
-            "city": company.city,
-        }
 
 
 class JobDescriptionRetrieveUpdateDestroySerializer(

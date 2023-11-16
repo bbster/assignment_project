@@ -24,6 +24,7 @@ ALLOWED_HOSTS = [
     "0.0.0.0",
 ]
 
+
 # Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -33,14 +34,15 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "rest_framework_swagger",
-    "drf_yasg",
+    # "rest_framework_swagger",
+    # "drf_yasg",
     "corsheaders",
     "drf_spectacular",
     # my apps
     "job_description.apps.EmploymentConfig",
     "todo_app.apps.TodoConfig",
     "account.apps.AccountConfig",
+    # "dummy.apps.DummyConfig",
 ]
 
 MIDDLEWARE = [
@@ -127,9 +129,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ko-kr"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Seoul"
 
 USE_I18N = True
 
@@ -147,8 +149,8 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # CORS 추가
-CORS_ORIGIN_WHITELIST = ("http://127.0.0.1:8000",)
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
