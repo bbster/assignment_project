@@ -4,6 +4,7 @@ from django.conf import settings
 from django.db import IntegrityError
 from django.shortcuts import render
 from rest_framework import filters, serializers
+from rest_framework.authentication import SessionAuthentication
 from rest_framework.generics import (
     CreateAPIView,
     ListCreateAPIView,
@@ -42,11 +43,13 @@ class JobDescriptionListCreateView(ListCreateAPIView):
 class JobDescriptionRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = JobDescription.objects.all()
     serializer_class = JobDescriptionRetrieveUpdateDestroySerializer
+    permission_classes = [SessionAuthentication]
 
 
 class CompanyListCreateView(ListCreateAPIView):
     queryset = Company.objects.all()
     serializer_class = CompanyListCreateSerializer
+    permission_classes = [SessionAuthentication]
     filter_backends = [filters.SearchFilter]
     search_fields = ["id", "company_name", "country", "city"]
 
@@ -69,21 +72,25 @@ class CompanyListCreateView(ListCreateAPIView):
 class CompanyRetrieveDestroyView(RetrieveDestroyAPIView):
     queryset = Company.objects.all()
     serializer_class = CompanyRetrieveUpdateDestroySerializer
+    permission_classes = [SessionAuthentication]
 
 
 class UserCreateView(CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserCreateSerializer
+    permission_classes = [SessionAuthentication]
 
 
 class UserRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserRetrieveUpdateDestroySerializer
+    permission_classes = [SessionAuthentication]
 
 
 class ResumeHistoryListCreateView(ListCreateAPIView):
     queryset = ResumeHistory.objects.all()
     serializer_class = ResumeHistoryListCreateSerializer
+    permission_classes = [SessionAuthentication]
 
     def perform_create(self, serializer):
         try:
@@ -97,3 +104,4 @@ class ResumeHistoryListCreateView(ListCreateAPIView):
 class ResumeHistoryRetrieveDestroyView(RetrieveDestroyAPIView):
     queryset = ResumeHistory.objects.all()
     serializer_class = ResumeHistoryRetrieveDestroySerializer
+    permission_classes = [SessionAuthentication]

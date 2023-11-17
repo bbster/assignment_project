@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.utils.timezone import now
 from rest_framework import status
 from rest_framework.generics import GenericAPIView, ListAPIView, CreateAPIView
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -97,12 +98,9 @@ from account.utils import (
 #         )
 
 
-class AccountListCreateView(ListAPIView, CreateAPIView):
+class AccountCreateView(CreateAPIView):
     queryset = AccountUser.objects.all()
     serializer_class = AccountLoginSerializer
-
-    def get(self, request: Request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
