@@ -4,7 +4,7 @@ from drf_spectacular.views import SpectacularAPIView
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 
-from account.views import AccountListCreateView
+from account.views import AccountCreateView, AccountLoginView
 from job_description.views import (
     CompanyListCreateView,
     CompanyRetrieveDestroyView,
@@ -61,5 +61,6 @@ urlpatterns = [
     # account
     # path("api/v1/session", SessionAPIView.as_view()),
     # path("api/v1/token", TokenAPIView.as_view()),
-    path("api/v1/account/login", AccountListCreateView.as_view()),
+    path("api/v1/account/login", AccountLoginView.as_view()),
+    path("api/v1/account/create", AccountCreateView.as_view()),
 ]

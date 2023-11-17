@@ -1,9 +1,9 @@
 __pycache__
 collected_static
-.idea
-.env
-.python-version
-.DS_Store
+**/.idea/**
+**/.env/**
+**/.python-version/**
+**/.DS_Store/**
 **/dummy/**
 **/db.sqlite3
 **/sqlite3.sql
