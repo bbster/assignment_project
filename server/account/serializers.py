@@ -13,7 +13,7 @@ class SessionSerializer(serializers.Serializer):
     auth_number = serializers.CharField()
 
 
-class AccountLoginSerializer(serializers.ModelSerializer):
+class AccountSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = AccountUser

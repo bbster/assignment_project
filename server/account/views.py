@@ -11,7 +11,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from account.models import AccountUser
-from account.serializers import SessionSerializer, TokenSerializer, AccountLoginSerializer
+from account.serializers import SessionSerializer, TokenSerializer, AccountSerializer
+from account.services import create_account_user
 from account.utils import (
     generate_auth_number,
     generate_auth_token,
@@ -99,19 +100,34 @@ from account.utils import (
 
 
 class AccountCreateView(CreateAPIView):
-    queryset = AccountUser.objects.all()
-    serializer_class = AccountLoginSerializer
+    serializer_class = AccountSerializer
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        # 사용자 인증
-        user = authenticate(request, username=serializer.validated_data["username"], password=serializer.validated_data["password"])
+        user = create_account_user(username=serializer.validated_data["username"], password=serializer.validated_data["password"])
 
         if user is not None:
             # 로그인
-            login(request, user)
-            return Response({"message": "로그인 성공"}, status=status.HTTP_200_OK,)
+            return Response({"message": "계정 생성 성공"}, status=status.HTTP_201_CREATED,)
         else:
-            return Response({"message": "로그인 실패"}, status=status.HTTP_400_BAD_REQUEST,)
+            return Response({"message": "계정 생성 실패"}, status=status.HTTP_400_BAD_REQUEST,)
+
+
+class AccountLoginView(GenericAPIView):
+    serializer_class = AccountSerializer
+
+    def post(self, request: Request):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        user = authenticate(request=request,
+                            username=serializer.validated_data["username"],
+                            password=serializer.validated_data["password"])
+
+        if user:
+            login(request=request, user=user)
+            return Response({"message": "로그인 성공"}, status=status.HTTP_200_OK, )
+        else:
+            return Response({"message": "로그인 실패"}, status=status.HTTP_400_BAD_REQUEST, )
