@@ -7,6 +7,7 @@
     "nightwatch.conf.*",
     "playwright.config.*"
   ],
+  "exclude": ["mocks/**/*", "**/__tests__/*"],
   "compilerOptions": {
     "composite": true,
     "module": "ESNext",

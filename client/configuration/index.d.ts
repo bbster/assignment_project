@@ -1,6 +1,8 @@
 import { z } from 'zod'
 import * as Schema from './schema'
 
+export {}
+
 declare global {
   export type Company = z.infer<typeof Schema.company>
   export type JobDescription = z.infer<typeof Schema.jobDescription>
