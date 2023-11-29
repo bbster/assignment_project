@@ -1,11 +1,21 @@
-import '@/assets/style.global.scss'
-
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-const app = createApp(App)
+import '@/assets/style.global.scss'
 
-app.use(router)
+const enableMocking = async () => {
+  if (!import.meta.env.VITE_API_MOCK) return
 
-app.mount('#app')
+  const { worker } = await import('../mocks/browser')
+
+  return worker.start({ onUnhandledRequest: 'bypass' })
+}
+
+enableMocking().then(() => {
+  const app = createApp(App)
+
+  app.use(router)
+
+  app.mount('#app')
+})

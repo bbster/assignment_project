@@ -7,6 +7,15 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AlertDialogAction: typeof import('radix-vue')['AlertDialogAction']
+    AlertDialogCancel: typeof import('radix-vue')['AlertDialogCancel']
+    AlertDialogContent: typeof import('radix-vue')['AlertDialogContent']
+    AlertDialogDescription: typeof import('radix-vue')['AlertDialogDescription']
+    AlertDialogOverlay: typeof import('radix-vue')['AlertDialogOverlay']
+    AlertDialogPortal: typeof import('radix-vue')['AlertDialogPortal']
+    AlertDialogRoot: typeof import('radix-vue')['AlertDialogRoot']
+    AlertDialogTitle: typeof import('radix-vue')['AlertDialogTitle']
+    AlertDialogTrigger: typeof import('radix-vue')['AlertDialogTrigger']
     AppBrand: typeof import('./src/components/atoms/AppBrand.vue')['default']
     AppHeader: typeof import('./src/components/organisms/headers/AppHeader.vue')['default']
     AppLayout: typeof import('./src/components/_layouts/AppLayout.vue')['default']
@@ -15,6 +24,7 @@ declare module 'vue' {
     CompanyCard: typeof import('./src/components/molecules/cards/CompanyCard.vue')['default']
     JobDescriptionCard: typeof import('./src/components/molecules/cards/JobDescriptionCard.vue')['default']
     JobDescriptionsBoard: typeof import('./src/components/organisms/boards/JobDescriptionsBoard.vue')['default']
+    Label: typeof import('radix-vue')['Label']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SigninDialogTrigger: typeof import('./src/components/organisms/account/SigninDialogTrigger.vue')['default']
